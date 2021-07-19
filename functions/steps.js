@@ -1,6 +1,6 @@
 const data = require('./data.js');
 const gql = require('./graphql.js');
-const eval = require('./eval.js');
+const evaluation = require('./evaluationuation.js');
 const newrelic = require('newrelic');
 
 // grab the Mixpanel factory
@@ -256,21 +256,21 @@ const nextStep = async (count, context, configyml, issueno) => {
   return branchName
 }
 
-const workEvaluation = async (typeOfStep, context, configyml, count) => {
+const workevaluationuation = async (typeOfStep, context, configyml, count) => {
   var res = []
   if (typeOfStep[0] == "checks") {
     console.log("Checking checks")
-    res = await eval.checks(context)
+    res = await evaluation.checks(context)
 
   } else if (typeOfStep[0] == "IssueComment") {
     console.log("Checking comment")
-    res = await eval.IssueComment(context)
+    res = await evaluation.IssueComment(context)
   } else if (typeOfStep[0] == "PRmerge") {
     console.log("Checking PR")
-    res = await eval.PRmerge(context, configyml, count)
+    res = await evaluation.PRmerge(context, configyml, count)
   } else if (typeOfStep[0] == "feedback") {
     console.log("Receiving feedback")
-    res = await eval.feedback(context)
+    res = await evaluation.feedback(context)
   }
   return res
 }
