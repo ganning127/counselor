@@ -39,7 +39,7 @@ test("recieves issues.opened event", async function () {
       action: "opened",
       repository: {
         owner: {
-          login: "ganning127",
+          login: "emsesc",
         },
         name: "jest-test-repo",
       },
