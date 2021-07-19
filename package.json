@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "start": "probot run ./app.js",
-    "test": "jest"
+    "test": "node test.js"
   },
   "dependencies": {
     "@architect/functions": "^3.14.1",
