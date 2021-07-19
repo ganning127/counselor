@@ -1,38 +1,7 @@
 {
-  "name": "bitcampdev",
-  "version": "1.0.0",
-  "private": true,
-  "description": "This Github App creates BitLabs and guides students through courses.",
-  "author": "Bit Project <info@bitproject.org>",
-  "license": "ISC",
-  "homepage": "https://github.com/bitprj/camp.dev",
-  "keywords": [
-    "probot",
-    "github",
-    "probot-app"
-  ],
-  "scripts": {
-    "start": "probot run ./app.js",
-    "test": "__tests__/test"
-  },
+  "name": "http-post-api-github-webhooks",
   "dependencies": {
-    "@architect/functions": "^3.14.1",
-    "@octokit/core": "^3.2.5",
-    "@probot/adapter-azure-functions": "^1.0.12",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "js-yaml": "^4.0.0",
-    "mixpanel": "^0.13.0",
-    "newrelic": "^7.1.1",
-    "probot": "^11.4.1",
-    "ruby": "^0.6.1"
-  },
-  "devDependencies": {
-    "jest": "^26.6.3",
-    "nock": "^13.0.5",
-    "smee-client": "^1.2.2"
-  },
-  "engines": {
-    "node": ">= 10.13.0"
+    "@architect/functions": "^3.13.9",
+    "probot": "^11.0.6"
   }
 }
