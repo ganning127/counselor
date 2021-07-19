@@ -6,24 +6,13 @@ nock.disableNetConnect();
 
 const { Probot, ProbotOctokit } = require("probot");
 
-const app = require("../../app");
+const app = require("../http/post-api-github-webhooks/app");
 
 /** @type {import('probot').Probot */
 let probot;
 const test = suite("app");
 test.before.each(() => {
-  probot = new Probot({
-    // simple authentication as alternative to appId/privateKey
-    githubToken: "test",
-    // disable logs
-    logLevel: "warn",
-    // disable request throttling and retries
-    Octokit: ProbotOctokit.defaults({
-      throttle: { enabled: false },
-      retry: { enabled: false },
-    }),
-  });
-  probot.load(app);
+  return true;
 });
 
 test("recieves issues.opened event", async function () {
