@@ -1,6 +1,6 @@
 const data = require('./data.js');
 const gql = require('./graphql.js');
-const evaluation = require('./evaluationuation.js');
+const evaluation = require('./evaluation.js');
 const newrelic = require('newrelic');
 
 // grab the Mixpanel factory
@@ -256,7 +256,7 @@ const nextStep = async (count, context, configyml, issueno) => {
   return branchName
 }
 
-const workevaluationuation = async (typeOfStep, context, configyml, count) => {
+const workEvaluation = async (typeOfStep, context, configyml, count) => {
   var res = []
   if (typeOfStep[0] == "checks") {
     console.log("Checking checks")
