@@ -25,7 +25,7 @@ test("recieves issues.opened event", async function () {
   const mock = nock("https://api.github.com")
     // create new check run
     .post(
-      "/repos/ganningxu127/jest-test-repo/issues/1/comments",
+      "/repos/ganning127/jest-test-repo/issues/1/comments",
       (requestBody) => {
         assert.equal(requestBody, { body: "Hello, World!" });
         return true;
