@@ -11,12 +11,9 @@
     "github",
     "probot-app"
   ],
-  "jest": {
-    "passWithNoTests": true
-  },
   "scripts": {
     "start": "probot run ./app.js",
-    "test": "jest"
+    "test": "__tests__/test"
   },
   "dependencies": {
     "@architect/functions": "^3.14.1",
