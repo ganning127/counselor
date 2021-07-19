@@ -11,6 +11,9 @@
     "github",
     "probot-app"
   ],
+  "jest": {
+    "passWithNoTests": true
+  },
   "scripts": {
     "start": "probot run ./app.js",
     "test": "jest"
