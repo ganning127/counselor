@@ -1,13 +1,9 @@
 const { suite } = require("uvu");
 const assert = require("uvu/assert");
-
 const nock = require("nock");
 nock.disableNetConnect();
-
 const { Probot, ProbotOctokit } = require("probot");
-
 const app = require("./src/http/post-api-github-webhooks/app");
-
 /** @type {import('probot').Probot */
 let probot;
 const test = suite("app");
@@ -25,13 +21,33 @@ test.before.each(() => {
   });
   probot.load(app);
 });
-
 test("recieves issues.opened event", async function () {
-
-
-    console.log("HELLO");
-    return true;
+  const mock = nock("https://api.github.com")
+    // create new check run
+    .post(
+      "/repos/ganningxu127/jest-test-repo/issues/1/comments",
+      (requestBody) => {
+        assert.equal(requestBody, { body: "Hello, World!" });
+        return true;
+      }
+    )
+    .reply(201, {});
+  await probot.receive({
+    name: "issues",
+    id: "1",
+    payload: {
+      action: "opened",
+      repository: {
+        owner: {
+          login: "ganning127",
+        },
+        name: "jest-test-repo",
+      },
+      issue: {
+        number: 1,
+      },
+    },
   });
-
-
+  assert.equal(mock.activeMocks(), []);
+});
 test.run();
