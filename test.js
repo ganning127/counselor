@@ -10,7 +10,8 @@ const test = suite("app");
 test.before.each(() => {
   probot = new Probot({
     // simple authentication as alternative to appId/privateKey
-    githubToken: "test",
+    appId: process.env.APP_ID,
+    privateKey: process.env.PRIVATE_KEY,
     // disable logs
     logLevel: "warn",
     // disable request throttling and retries
