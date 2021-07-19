@@ -27,7 +27,7 @@ test("recieves issues.opened event", async function () {
     .post(
       "/repos/ganning127/jest-test-repo/issues/1/comments",
       (requestBody) => {
-        assert.equal(requestBody, { body: "Hello, World!" });
+        expect(requestBody).toMatchObject({ body: "Hello, World!" });
         return true;
       }
     )
@@ -39,7 +39,7 @@ test("recieves issues.opened event", async function () {
       action: "opened",
       repository: {
         owner: {
-          login: "emsesc",
+          login: "ganning127",
         },
         name: "jest-test-repo",
       },
@@ -48,6 +48,7 @@ test("recieves issues.opened event", async function () {
       },
     },
   });
+
   assert.equal(mock.activeMocks(), []);
 });
 test.run();
