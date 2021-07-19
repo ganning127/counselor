@@ -12,7 +12,8 @@
     "probot-app"
   ],
   "scripts": {
-    "start": "probot run ./app.js"
+    "start": "probot run ./app.js",
+    "test": "jest"
   },
   "dependencies": {
     "@architect/functions": "^3.14.1",
