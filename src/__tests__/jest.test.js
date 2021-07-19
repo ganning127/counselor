@@ -12,12 +12,12 @@ const app = require("../http/post-api-github-webhooks/app");
 let probot;
 const test = suite("app");
 test.before.each(() => {
-  return true;
+  test.skip('skip', () => { });
 });
 
 test("recieves issues.opened event", async function () {
   console.log("TRUE");
-  return true;
+  test.skip('skip', () => { });
 });
 
 test.run();
