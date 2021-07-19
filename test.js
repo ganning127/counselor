@@ -30,6 +30,7 @@ test("recieves issues.opened event", async function () {
 
 
     console.log("HELLO");
+    return true;
   });
 
 
