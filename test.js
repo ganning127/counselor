@@ -31,4 +31,4 @@ test("recieves issues.opened event", async function () {
     // create new check run
 });
 
-test.run();
+// test.run();
