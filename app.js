@@ -5,7 +5,6 @@
 
 const data = require('./functions/data.js');
 const steps = require('./functions/steps.js');
-const newrelic = require('newrelic');
 
 var start;
 

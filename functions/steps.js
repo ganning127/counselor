@@ -1,7 +1,7 @@
 const data = require('./data.js');
 const gql = require('./graphql.js');
 const evaluation = require('./evaluation.js');
-const newrelic = require('newrelic');
+// const newrelic = require('newrelic');
 
 // grab the Mixpanel factory
 var Mixpanel = require('mixpanel');
@@ -194,7 +194,7 @@ const updateFiles = async (typeOfStep, moveOn, count, configyml, branchName, con
   console.log(await gql.queryData(gqlrequest))
 
   // log in newrelic
-  newrelic.recordCustomEvent("CabinGithub", attributes)
+  // newrelic.recordCustomEvent("CabinGithub", attributes)
 }
 
 const nextStep = async (count, context, configyml, issueno) => {
@@ -292,7 +292,7 @@ const startLab = async (context, configyml) => {
   console.log(await gql.queryData(gqlrequest))
 
   const attributes = { type: 'Start Camp', user: context.payload.repository.owner.login, repo: context.payload.repository.html_url }
-  newrelic.recordCustomEvent("CabinGithub", attributes)
+  // newrelic.recordCustomEvent("CabinGithub", attributes)
 
   mixpanel.track('Start Camp', {
     'distinct_id': context.payload.repository.owner.login,
@@ -346,7 +346,7 @@ const startLab = async (context, configyml) => {
 
     //log first step in newrelic
     const attributes = { type: 'Start New Step', user: context.payload.repository.owner.login, repo: context.payload.repository.html_url, repoName: context.payload.repository.name, title: configyml.steps[0].title, path: path, count: 0 }
-    newrelic.recordCustomEvent("CabinGithub", attributes)
+    // newrelic.recordCustomEvent("CabinGithub", attributes)
 
     //log in mixpanel first step
     mixpanel.track('Start First Step', {
