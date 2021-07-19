@@ -27,36 +27,10 @@ test.before.each(() => {
 });
 
 test("recieves issues.opened event", async function () {
-  const mock = nock("https://api.github.com")
-    // create new check run
-    .post(
-      "/repos/probot/example-aws-lambda-serverless/issues/1/comments",
-      (requestBody) => {
-        assert.equal(requestBody, { body: "Hello, World!" });
 
-        return true;
-      }
-    )
-    .reply(201, {});
 
-  await probot.receive({
-    name: "issues",
-    id: "1",
-    payload: {
-      action: "opened",
-      repository: {
-        owner: {
-          login: "probot",
-        },
-        name: "example-aws-lambda-serverless",
-      },
-      issue: {
-        number: 1,
-      },
-    },
+    console.log("HELLO");
   });
 
-  assert.equal(mock.activeMocks(), []);
-});
 
 test.run();
