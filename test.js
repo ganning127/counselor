@@ -30,7 +30,7 @@ test("recieves issues.opened event", async function () {
   const mock = nock("https://api.github.com")
     // create new check run
     .post(
-      "/repos/ganning127/bp-serverless/issues/22/comments",
+      "/repos/probot/example-aws-lambda-serverless/issues/1/comments",
       (requestBody) => {
         assert.equal(requestBody, { body: "Hello, World!" });
 
@@ -48,10 +48,10 @@ test("recieves issues.opened event", async function () {
         owner: {
           login: "probot",
         },
-        name: "bp-serverless",
+        name: "example-aws-lambda-serverless",
       },
       issue: {
-        number: 22,
+        number: 1,
       },
     },
   });
